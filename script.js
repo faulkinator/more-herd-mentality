@@ -1,5 +1,3 @@
-// JavaScript code to fetch and display a random string from data.json
-
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the JSON data
     fetch('questions.json')

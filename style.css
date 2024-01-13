@@ -3,13 +3,14 @@ body {
     background-color: #222222;
     color: #aaaaaa;
     text-align: center;
+    line-height: 1.4;
     padding: 0;
     margin: 0;
 }
 
 header {
     padding: 1.5em;
-    border-bottom: 1px solid #000000; 
+    border-bottom: 1px solid #000000;
 }
 
 section#content {
@@ -27,6 +28,29 @@ section#content h3#randomQuestionIndex {
     font-size: 1em;
     color: #666666;
 }
+
+section#content a#refreshQuestion {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    border-radius: 2em;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    background-color: #dddddd;
+    border-bottom: 4px solid #000000;
+    text-decoration: none;
+}
+
+section#content a#refreshQuestion:hover {
+    background-color: #ffffff;
+}
+
+section#content a#refreshQuestion:active {
+    background-color: #ffffff;
+}
+
+
 
 footer {
     padding: 1.5em;

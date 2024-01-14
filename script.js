@@ -1,18 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Display a random question
-    function refreshQuestion(questions) {
-        const randomIndex = Math.floor(Math.random() * questions.length);
+    let usedIndices = [];
 
-        // Show a random question to the user 
+    // Function to display a random question
+    function refreshQuestion(questions) {
+        if (usedIndices.length === questions.length) {
+            // Reset usedIndices if all questions have been used
+            usedIndices = [];
+        }
+
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * questions.length);
+        } while (usedIndices.includes(randomIndex));
+
+        // Add the used index to the list
+        usedIndices.push(randomIndex);
+
+        // Showing a random question to the user 
         const randomQuestion = document.getElementById('randomQuestion');
         randomQuestion.textContent = `${questions[randomIndex]}`;
 
-        // Show the question number and total to the user
+        // Showing the question number and total to the user
         const randomQuestionIndex = document.getElementById('randomQuestionIndex');
-        randomQuestionIndex.textContent = `Question ${randomIndex + 1} of ${questions.length}`;
+        randomQuestionIndex.textContent = `Question ${usedIndices.length} of ${questions.length}`;
     }
 
-    // Fetch questions on load
+    // Fetch questions on page load
     fetch('questions.json')
         .then(response => response.json())
         .then(data => {
@@ -21,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Initial question load
             refreshQuestion(questions);
 
-            // Adding click event listener to the refresh button
+            // Adding click event listener to the "NEXT QUESTION" link
             const refreshButton = document.getElementById('refreshQuestion');
             refreshButton.addEventListener('click', function () {
                 refreshQuestion(questions);

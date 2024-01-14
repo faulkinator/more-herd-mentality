@@ -8,10 +8,10 @@ This is a very casual side project, so this is intentionally kept short.
 
 To contribute to **code**:
 
-1. Either choose an issue or fix a bug that you have found
+1. Either choose an [issue](https://github.com/faulkinator/more-herd-mentality/issues) or fix a bug that you have found
 2. Fork the repo
 3. Make your changes
-4. Maker a pull request detailing your solution
+4. Make a pull request detailing your solution
 
 ### Questions
 
